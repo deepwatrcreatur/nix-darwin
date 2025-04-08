@@ -1,8 +1,11 @@
+# config.nix
+let
+  pkgs = import <nixpkgs> {};
+in
 {
-packageOverrides = pkgs: {
-    myPackages = pkgs.buildEnv {
-      name = "my-packages";
-      paths = with pkgs; [
+  myPackages = pkgs.buildEnv {
+    name = "my-packages";
+    paths = with pkgs; [
       yt-dlp
       helix
       rclone
@@ -17,7 +20,6 @@ packageOverrides = pkgs: {
       stow
       gnupg
       fastfetch
-      rclone
       elixir
       erlang
       mix2nix
@@ -30,7 +32,6 @@ packageOverrides = pkgs: {
       curl
       nmap
       tmux
-      ];
-    };
+    ];
   };
 }
