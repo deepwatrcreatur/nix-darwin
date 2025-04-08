@@ -32,6 +32,13 @@ in
       curl
       nmap
       tmux
+      ffmpeg
+      libuv
+      lz4
+      lzo
+      sqlite
+      starship
+      watch
     ];
   };
 }
