@@ -7,6 +7,7 @@ in
     name = "my-packages";
     paths = with pkgs; [
       yt-dlp
+      glow
       helix
       rclone
       git
