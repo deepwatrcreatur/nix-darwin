@@ -28,6 +28,7 @@ packageOverrides = pkgs: {
       bat
       wget
       curl
+      nmap
       tmux
       ];
     };
