@@ -1,10 +1,5 @@
-# ~/nix-darwin/darwin-configuration.nix
-{
-  config,
-  pkgs,
-  home-manager,
-  ...
-}:
+{ config, pkgs, ... }:
+
 {
   environment.systemPackages = with pkgs; [
     yt-dlp
@@ -42,46 +37,6 @@
     watch
   ];
 
-  imports = [
-    home-manager.darwinModules.home-manager
-  ];
-
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-  home-manager.users.deepwatrcreatur = { pkgs, ... }: {
-    home.stateVersion = "23.11";
-    home.homeDirectory = "/Users/deepwatrcreatur"; # Add this line
-    programs.helix = {
-      enable = true;
-      defaultEditor = true;
-
-      extraPackages = with pkgs; [
-        nil
-        nixfmt
-      ];
-
-      languages = {
-        language = [{
-          name = "nix";
-          auto-format = true;
-          language-servers = [ "nil" ];
-        }];
-
-        language-server.nil = {
-          command = "nil";
-        };
-      };
-
-      settings = {
-        theme = "gruvbox";
-        editor.cursor-shape = {
-          insert = "bar";
-          normal = "block";
-          select = "underline";
-        };
-      };
-    };
-  };
-
   system.stateVersion = 4;
 }
+
