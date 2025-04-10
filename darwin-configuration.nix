@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  nix.enable = false; # Disable Nix-Darwin's Nix management
+
   environment.systemPackages = with pkgs; [
     yt-dlp
     glow
@@ -16,8 +18,6 @@
     stow
     gnupg
     fastfetch
-    elixir
-    erlang
     mix2nix
     iperf3
     htop

@@ -5,6 +5,18 @@
   home.homeDirectory = "/Users/deepwatrcreatur";
   home.stateVersion = "24.11";
 
+  # Add packages to your PATH
+  home.packages = with pkgs; [
+    # Development tools
+    elixir
+    erlang
+    
+    # Other utilities you might want
+    ripgrep
+    fd
+    jq
+  ];
+
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -13,7 +25,7 @@
       # Nix language servers
       nil
       nixd
-      nixfmt
+      nixfmt-classic  # Use the classic version explicitly
       
       # Elixir language server
       elixir-ls
@@ -24,7 +36,7 @@
         {
           name = "nix";
           auto-format = true;
-          formatter = { command = "nixfmt"; };
+          formatter = { command = "nixfmt-classic"; };
           language-servers = [ "nil" "nixd" ];
         }
         {
@@ -38,7 +50,7 @@
         nil = {
           command = "nil";
           config.nil = {
-            formatting.command = [ "nixfmt" ];
+            formatting.command = [ "nixfmt-classic" ];
           };
         };
         
@@ -67,11 +79,5 @@
       };
     };
   };
-
-  # Add Elixir and Erlang to your PATH
-  home.packages = with pkgs; [
-    elixir
-    erlang
-  ];
 }
 
