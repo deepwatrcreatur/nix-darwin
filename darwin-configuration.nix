@@ -8,9 +8,12 @@
     glow
     rclone
     git
-    gh
+    gh-actions-cache
     bash
     python3
+    erlang
+    elixir
+    go
     kitty
     nano
     neovim
@@ -35,6 +38,8 @@
     sqlite
     starship
     watch
+    tailscale
+    tailscale-gitops-pusher
   ];
 
   system.stateVersion = 4;

@@ -8,9 +8,6 @@
   # Add packages to your PATH
   home.packages = with pkgs; [
     # Development tools
-    elixir
-    erlang
-    
     # Other utilities you might want
     ripgrep
     fd
