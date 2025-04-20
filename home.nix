@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     # Development tools
     # Other utilities you might want
+    rsync
     ripgrep
     fd
     jq
