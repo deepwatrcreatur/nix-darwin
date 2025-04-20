@@ -40,7 +40,11 @@
     watch
     tailscale
     tailscale-gitops-pusher
+    virt-viewer
   ];
+
+  # Enable the Tailscale service
+  services.tailscale.enable = true;
 
   system.stateVersion = 4;
 }
