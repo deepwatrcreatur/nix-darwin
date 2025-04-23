@@ -16,10 +16,16 @@
     fish
     lsd
   ];
+
   shellInit = ''
     set -x EDITOR hx
     set -x VISUAL hx
   '';
+
+   users.users.${username} = {
+    shell = pkgs.fish;
+  };
+
   programs.fish = {
     shellAliases = {
       ls = "lsd"; # If you use lsd
