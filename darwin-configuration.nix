@@ -10,6 +10,7 @@
     git
     gh-actions-cache
     bash
+    lsd
     python3
     erlang
     elixir
