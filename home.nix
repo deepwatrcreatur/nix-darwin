@@ -13,8 +13,22 @@
     ripgrep
     fd
     jq
+    fish
+    lsd
   ];
-
+  shellInit = ''
+    set -x EDITOR hx
+    set -x VISUAL hx
+  '';
+  programs.fish = {
+    shellAliases = {
+      ls = "lsd"; # If you use lsd
+      ll = "lsd -l";
+      la = "lsd -a";
+      lla = "lsd -la";
+      ".." = "cd ..";
+      update = "darwin-rebuild switch --flake $(home.homeDirectory)/nix-darwin-config/#$(hostname)"; # Example update alias
+    };
   programs.helix = {
     enable = true;
     defaultEditor = true;

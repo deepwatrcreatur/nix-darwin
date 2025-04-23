@@ -15,6 +15,7 @@
     elixir
     go
     kitty
+    fish
     nano
     neovim
     chezmoi
