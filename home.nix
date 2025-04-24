@@ -24,7 +24,7 @@ in
       update = "darwin-rebuild switch --flake ${homeDirectory}/nix-darwin-config/#$(hostname)";
     };
     plugins = [
-      { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish; }
+      { name = "fzf"; src = pkgs.fishPlugins.fzf; }
       { name = "z"; src = pkgs.fishPlugins.z; }
       { name = "puffer"; src = pkgs.fishPlugins.puffer; }
       { name = "autopair"; src = pkgs.fishPlugins.autopair; }
