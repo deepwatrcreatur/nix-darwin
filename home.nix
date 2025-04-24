@@ -42,6 +42,7 @@ in
 
   programs.helix = {
     enable = true;
+    package = pkgs.helix;
     defaultEditor = true;
     extraPackages = with pkgs; [
       nil
@@ -60,6 +61,7 @@ in
     fzf
     grc
     lsd
+    # helix
     # Language servers & formatters (also ensures they are in PATH)
     nil
     nixd
