@@ -26,7 +26,7 @@ in
     plugins = [
       { name = "fzf-fish"; src = pkgs.fishPlugins.fzf-fish; }
       { name = "z"; src = pkgs.fishPlugins.z; }
-      { name = "puffer-fish"; src = pkgs.fishPlugins.puffer-fish; }
+      { name = "puffer"; src = pkgs.fishPlugins.puffer; }
       { name = "autopair"; src = pkgs.fishPlugins.autopair; }
       { name = "grc"; src = pkgs.fishPlugins.grc; }
       { name = "bobthefish"; src = pkgs.fishPlugins.bobthefish; }
