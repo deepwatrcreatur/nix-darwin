@@ -60,7 +60,6 @@ in
     fzf
     grc
     lsd
-    helix
     # Language servers & formatters (also ensures they are in PATH)
     nil
     nixd
