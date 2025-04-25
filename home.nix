@@ -1,4 +1,3 @@
-
 { config, pkgs, lib, ... }:
 let
   username = "deepwatrcreatur";
@@ -97,3 +96,4 @@ in
 
   programs.home-manager.enable = true;
 }
+
