@@ -89,7 +89,12 @@ in
     fzf
     virt-viewer
   ];
-  
+  home.sessionPath = [ "$HOME/.cargo/bin" ];
+  home.sessionVariables = {
+    RUSTUP_HOME = "$HOME/.rustup";
+    CARGO_HOME = "$HOME/.cargo";
+  };
+      
   programs.home-manager.enable = true;
 }
 
