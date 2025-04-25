@@ -1,3 +1,4 @@
+
 { config, pkgs, lib, ... }:
 let
   username = "deepwatrcreatur";
@@ -7,6 +8,37 @@ in
   home.username = username;
   home.homeDirectory = lib.mkForce homeDirectory;
   home.stateVersion = "24.11";
+
+  # All your CLI tools and user packages here!
+  home.packages = with pkgs; [
+    fish
+    fzf
+    grc
+    lsd
+    bat
+    tmux
+    starship
+    fastfetch
+    kitty
+    neovim
+    python3
+    erlang
+    elixir
+    elixir-ls
+    go
+    gh
+    gh-actions-cache
+    rustup
+    nil
+    nixd
+    nixpkgs-fmt
+    chezmoi
+    stow
+    yt-dlp
+    glow
+    mix2nix
+    virt-viewer
+  ];
 
   programs.fish = {
     enable = true;
@@ -31,8 +63,9 @@ in
       { name = "bobthefish"; src = pkgs.fishPlugins.bobthefish; }
     ];
     interactiveShellInit = ''
-      if test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
-        source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+      # Source Home Manager's environment (should be auto-generated)
+      if test -e $HOME/.nix-profile/etc/profile.d/hm-session-vars.fish
+        source $HOME/.nix-profile/etc/profile.d/hm-session-vars.fish
       end
       set -g theme_color_scheme solarized
       set -g theme_powerline_fonts no
@@ -56,7 +89,6 @@ in
     languages = import ./helix-languages.nix { inherit pkgs; };
   };
 
-  # home.packages = [ ]; # (optional: leave empty or remove)
   home.sessionPath = [ "$HOME/.cargo/bin" ];
   home.sessionVariables = {
     RUSTUP_HOME = "$HOME/.rustup";
@@ -65,4 +97,3 @@ in
 
   programs.home-manager.enable = true;
 }
-
