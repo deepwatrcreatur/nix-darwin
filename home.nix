@@ -72,6 +72,7 @@ in
     elixir
     elixir-ls
     go
+    gh
     gh-actions-cache
     rustup
     
