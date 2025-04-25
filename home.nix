@@ -34,7 +34,9 @@ in
       if test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
         source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
       end
-      set -g theme_color_scheme solarized
+      if test -e $HOME/.nix-profile/etc/profile.d/hm-session-vars.fish
+        source $HOME/.nix-profile/etc/profile.d/hm-session-vars.fish
+      end      set -g theme_color_scheme solarized
       set -g theme_powerline_fonts no
       set -g theme_project_dir_length 1
       set -g theme_show_exit_status yes
