@@ -103,5 +103,6 @@ in
   };
       
   programs.home-manager.enable = true;
+  home.enableNixpkgsReleaseCheck = false;
 }
 
