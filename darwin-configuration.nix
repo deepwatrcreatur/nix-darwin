@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  nix.enable = false; # Disable Nix-Darwin's Nix management
+  # nix.enable = false; # Disable Nix-Darwin's Nix management
 
   environment.systemPackages = with pkgs; [
     # Core system utilities
