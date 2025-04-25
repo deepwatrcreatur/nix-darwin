@@ -1,53 +1,38 @@
 { config, pkgs, ... }:
-
 {
   nix.enable = false; # Disable Nix-Darwin's Nix management
-
+  
+  # System-level packages and core utilities
   environment.systemPackages = with pkgs; [
-    yt-dlp
-    glow
-    rclone
-    git
-    gh-actions-cache
+    # Core system utilities
     bash
-    lsd
-    python3
-    erlang
-    elixir
-    go
-    kitty
-    fish
-    nano
-    neovim
-    chezmoi
-    stow
+    curl
+    wget
+    git
     gnupg
-    fastfetch
-    mix2nix
-    iperf3
+    watch
+    
+    # System monitoring and networking
     htop
     btop
-    fzf
-    bat
-    wget
-    curl
+    iperf3
     nmap
-    tmux
-    ffmpeg
+    tailscale
+    tailscale-gitops-pusher
+    
+    # System libraries and dependencies
     libuv
     lz4
     lzo
     sqlite
-    starship
-    watch
-    tailscale
-    tailscale-gitops-pusher
-    virt-viewer
+    
+    # Media and file processing tools
+    ffmpeg
+    rclone
   ];
-
+  
   # Enable the Tailscale service
   services.tailscale.enable = true;
-
   system.stateVersion = 4;
 }
 

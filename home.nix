@@ -2,13 +2,12 @@
 let
   username = "deepwatrcreatur";
   homeDirectory = "/Users/${username}";
-
 in
 {
   home.username = username;
   home.homeDirectory = lib.mkForce homeDirectory;
-  home.stateVersion = "24.11"; # Please update this to your actual state version
-
+  home.stateVersion = "24.11";
+  
   programs.fish = {
     enable = true;
     shellInit = ''
@@ -39,7 +38,7 @@ in
       set -g theme_display_git_untracked yes
     '';
   };
-
+  
   programs.helix = {
     enable = true;
     package = pkgs.helix;
@@ -50,25 +49,47 @@ in
       nixpkgs-fmt
       elixir-ls
     ];
-
-    settings = import ./helix-settings.nix; # <-- Simplified import
-
+    settings = import ./helix-settings.nix;
     languages = import ./helix-languages.nix { inherit pkgs; };
   };
-
+  
   home.packages = with pkgs; [
+    # Shell and terminal tools
     fish
     fzf
     grc
     lsd
-    # helix
-    # Language servers & formatters (also ensures they are in PATH)
+    bat
+    tmux
+    starship
+    fastfetch
+    ghostty  # Added Ghostty here
+    kitty    # Moved from system to user packages
+    
+    # Development tools and languages
+    neovim
+    python3
+    erlang
+    elixir
+    elixir-ls
+    go
+    gh-actions-cache
+    
+    # Language servers & formatters
     nil
     nixd
     nixpkgs-fmt
-    elixir-ls
-    elixir # Needed for `mix format` if you enable it
+    
+    # CLI utilities and tools
+    chezmoi
+    stow
+    yt-dlp
+    glow
+    mix2nix
+    fzf
+    virt-viewer
   ];
-
+  
   programs.home-manager.enable = true;
 }
+
