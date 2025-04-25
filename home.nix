@@ -1,4 +1,4 @@
-pkgs{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 let
   username = "deepwatrcreatur";
   homeDirectory = "/Users/${username}";
