@@ -7,7 +7,7 @@ in
   home.username = username;
   home.homeDirectory = lib.mkForce homeDirectory;
   home.stateVersion = "24.11";
-  
+
   programs.fish = {
     enable = true;
     shellInit = ''
@@ -34,9 +34,6 @@ in
       if test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
         source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
       end
-      if test -e $HOME/.nix-profile/etc/profile.d/hm-session-vars.fish
-        source $HOME/.nix-profile/etc/profile.d/hm-session-vars.fish
-      end
       set -g theme_color_scheme solarized
       set -g theme_powerline_fonts no
       set -g theme_project_dir_length 1
@@ -44,7 +41,7 @@ in
       set -g theme_display_git_untracked yes
     '';
   };
-  
+
   programs.helix = {
     enable = true;
     package = pkgs.helix;
@@ -58,52 +55,14 @@ in
     settings = import ./helix-settings.nix;
     languages = import ./helix-languages.nix { inherit pkgs; };
   };
-  
-  home.packages = with pkgs; [
-    # Shell and terminal tools
-    fish
-    fzf
-    grc
-    lsd
-    bat
-    tmux
-    starship
-    fastfetch
-    kitty    # Moved from system to user packages
-    
-    # Development tools and languages
-    neovim
-    python3
-    erlang
-    elixir
-    elixir-ls
-    go
-    gh
-    gh-actions-cache
-    rustup
-    
-    # Language servers & formatters
-    nil
-    nixd
-    nixpkgs-fmt
-    
-    # CLI utilities and tools
-    chezmoi
-    stow
-    yt-dlp
-    glow
-    mix2nix
-    fzf
-    virt-viewer
-  ];
+
+  # home.packages = [ ]; # (optional: leave empty or remove)
   home.sessionPath = [ "$HOME/.cargo/bin" ];
   home.sessionVariables = {
     RUSTUP_HOME = "$HOME/.rustup";
     CARGO_HOME = "$HOME/.cargo";
   };
-      
+
   programs.home-manager.enable = true;
-  home.enableNixProfile = true;
-  home.enableNixpkgsReleaseCheck = false;
 }
 
