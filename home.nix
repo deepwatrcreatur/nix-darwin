@@ -63,7 +63,6 @@ in
     tmux
     starship
     fastfetch
-    ghostty  # Added Ghostty here
     kitty    # Moved from system to user packages
     
     # Development tools and languages
