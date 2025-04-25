@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+pkgs{ config, pkgs, lib, ... }:
 let
   username = "deepwatrcreatur";
   homeDirectory = "/Users/${username}";
@@ -36,7 +36,8 @@ in
       end
       if test -e $HOME/.nix-profile/etc/profile.d/hm-session-vars.fish
         source $HOME/.nix-profile/etc/profile.d/hm-session-vars.fish
-      end      set -g theme_color_scheme solarized
+      end
+      set -g theme_color_scheme solarized
       set -g theme_powerline_fonts no
       set -g theme_project_dir_length 1
       set -g theme_show_exit_status yes
