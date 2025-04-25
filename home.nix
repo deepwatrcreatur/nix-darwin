@@ -31,6 +31,9 @@ in
       { name = "bobthefish"; src = pkgs.fishPlugins.bobthefish; }
     ];
     interactiveShellInit = ''
+      if test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+        source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+      end
       set -g theme_color_scheme solarized
       set -g theme_powerline_fonts no
       set -g theme_project_dir_length 1
