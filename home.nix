@@ -73,6 +73,7 @@ in
     elixir-ls
     go
     gh-actions-cache
+    rustup
     
     # Language servers & formatters
     nil
