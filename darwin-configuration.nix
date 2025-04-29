@@ -8,7 +8,8 @@
     curl
     wget
     gnupg
-    # Add more if you want them for all users and system scripts
+    htop
+    btop
   ];
 
   services.tailscale.enable = true;
