@@ -10,6 +10,7 @@
     gnupg
     htop
     btop
+    nmap
   ];
 
   services.tailscale.enable = true;
