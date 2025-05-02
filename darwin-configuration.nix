@@ -12,6 +12,8 @@
     btop
     nmap
   ];
+  
+  programs.fish.enable = true;
 
   services.tailscale.enable = true;
   system.stateVersion = 4;
