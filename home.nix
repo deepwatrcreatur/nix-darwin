@@ -88,7 +88,10 @@ in
     languages = import ./helix-languages.nix { inherit pkgs; };
   };
 
-  home.sessionPath = [ "$HOME/.cargo/bin" ];
+  home.sessionPath = [
+    "$HOME/.cargo/bin"
+    "/run/current-system/sw/bin"
+     ];
   home.sessionVariables = {
     RUSTUP_HOME = "$HOME/.rustup";
     CARGO_HOME = "$HOME/.cargo";
