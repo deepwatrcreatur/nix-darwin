@@ -2,7 +2,6 @@
 {
   programs.helix = {
     enable = true;
-    package = pkgs.helix;
     defaultEditor = true;
     extraPackages = with pkgs; [
       nil
