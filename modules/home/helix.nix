@@ -10,8 +10,8 @@
       nixpkgs-fmt
       elixir-ls
     ];
-    settings = import ../../helix-settings.nix;
-    languages = import ../../helix-languages.nix { inherit pkgs; };
+    settings = import ../../helix-config/settings.nix;
+    languages = import ../../helix-config/languages.nix { inherit pkgs; };
   };
 }
 
