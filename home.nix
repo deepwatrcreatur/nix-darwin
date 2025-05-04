@@ -7,6 +7,7 @@ in
   imports = [
     ./modules/home/fish.nix
     ./modules/home/helix.nix
+    ./modules/home/jujutsu.nix
   ];
 
   home.username = username;
